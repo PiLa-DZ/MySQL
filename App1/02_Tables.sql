@@ -4,8 +4,8 @@ SHOW CREATE TABLE users \G -- Show Table Source Code =======
 DESC users; -- Show Table Schema ===========================
 RENAME TABLE users TO workers; -- Rename Table =============
 DROP TABLE users; -- Delete Table ==========================
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (id INT); -- Create Table ===============
-
 -- == Copy Table ===========================================
 -- == Copy Table (Structure & Data) All --------------------
 CREATE TABLE users_full_copy LIKE users;

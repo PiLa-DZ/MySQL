@@ -1,4 +1,18 @@
-SELECT departments.name, COUNT(employees.id)
-FROM departments
-LEFT JOIN employees ON departments.id = employees.dept_id
-GROUP BY departments.id;
+-- I Don't understand anything ??? Mybe 40%
+-- == ======================================================
+SELECT 
+    d.name      AS Department, 
+    COUNT(e.id) AS Total_Emplyees
+FROM departments d
+LEFT JOIN employees e 
+ON d.id = e.dept_id
+GROUP BY d.id;
+
+-- == ======================================================
+SELECT 
+    d.name      AS Department, 
+    COUNT(e.id) AS Total_Employees
+FROM departments d
+LEFT JOIN employees e ON d.id = e.dept_id
+GROUP BY d.id
+HAVING Total_Employees < 2;
