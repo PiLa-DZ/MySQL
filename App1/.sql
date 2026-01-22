@@ -1,4 +1,6 @@
 system clear;
+drop table employees, departments;
+
 CREATE TABLE departments (
     id INT PRIMARY KEY,
     name VARCHAR(50) NOT NULL
@@ -24,9 +26,9 @@ INSERT INTO employees (name, dept_id) VALUES
 ('Laila', 3),   -- Marketing
 ('Omar', NULL); -- This is a new employee who has not yet been assigned a department.
 
-SELECT e.name, d.name
-FROM employees e
-INNER JOIN departments d ON e.dept_id = d.id;
+system clear;
 
--- select * from departments;
--- select * from employees;
+SELECT departments.name, COUNT(employees.id)
+FROM departments
+LEFT JOIN employees ON departments.id = employees.dept_id
+GROUP BY departments.id;

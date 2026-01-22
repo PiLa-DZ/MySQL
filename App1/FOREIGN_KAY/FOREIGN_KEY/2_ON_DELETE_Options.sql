@@ -1,0 +1,9 @@
+-- == ON DELETE ============================================
+-- NOTE: ON DELETE RESTRICT (DEFAULT) ----------------------
+--       You can't delete department row if 
+--       any employees following it
+-- NOTE: ON DELETE CASCADE ---------------------------------
+--       If you delete department row it will
+--       delete all employees following it
+-- NOTE: ON DELETE SET NULL --------------------------------
+--       Just make employee NULL
