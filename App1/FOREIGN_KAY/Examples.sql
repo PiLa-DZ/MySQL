@@ -1,4 +1,6 @@
 -- == Example ==============================================
+DROP TABLE IF EXISTS employees, departments; system clear;
+
 CREATE TABLE departments (
     id INT PRIMARY KEY,
     name VARCHAR(50) NOT NULL

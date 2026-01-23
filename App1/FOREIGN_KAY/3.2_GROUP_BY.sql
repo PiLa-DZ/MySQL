@@ -1,4 +1,3 @@
-
 -- Mission (sales_data)
 DROP TABLE IF EXISTS sales, employees;
 CREATE TABLE employees (
@@ -52,5 +51,4 @@ Challenge requirements:
 - The results must be sorted from highest to lowest sales.
 - Use professional aliases for each resulting column 
      (Total_Sales, Number_of_Orders, Average_Order).
-
 */

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS employees, departments; system clear;
 CREATE TABLE employees (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,

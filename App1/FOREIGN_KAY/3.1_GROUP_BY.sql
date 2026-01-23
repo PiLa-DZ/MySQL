@@ -1,4 +1,3 @@
--- I Don't understand anything ??? Mybe 40%
 -- == ======================================================
 SELECT 
     d.name      AS Department, 
