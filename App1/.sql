@@ -17,20 +17,9 @@ INSERT INTO employees (name, job, manager_id) VALUES
 ('Laila', 'Designer',   2),
 ('Mona',  'Recruiter',  3);
 
-SELECT
-    e.name AS Employee,
-    e.job  AS Position,
-    m.name AS Reports_To
+SELECT *, count(m.id)
+-- SELECT *
 FROM employees e
 LEFT JOIN employees m 
-ON e.manager_id = m.id; 
-
-SELECT
-    e.name AS Employee,
-    e.job  AS Position,
-    m.name AS Reports_To
-FROM employees e
-LEFT JOIN employees m 
-ON e.manager_id = m.id
-group by m.id
-
+ON e.id = m.manager_id
+group by e.id
