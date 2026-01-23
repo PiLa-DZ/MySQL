@@ -1,30 +1,26 @@
--- == Another Example ======================================
--- If you update (VIEW) it also will be update (original table)
-DROP VIEW IF EXISTS users_greater_than_18;
-DROP TABLE IF EXISTS users;
-CREATE TABLE users (
-    id INT auto_increment primary key,
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
-    age INT
+    brand VARCHAR(30),
+    price DECIMAL(10, 2),
+    alternative_product_id INT,
+    FOREIGN KEY (alternative_product_id) REFERENCES products(id)
 );
-INSERT INTO users (name, age) VALUES
-("Sara", 9),
-("Ali", 24),
-("Mona", 33),
-("Adem", 13),
-("Amir", 18);
-CREATE VIEW users_greater_than_18 AS
-SELECT * FROM users WHERE age >= 18;
-
+INSERT INTO products (name, brand, price, alternative_product_id) VALUES 
+('iPhone 15 Pro',    'Apple',   1200,  NULL),
+('iPhone 14',        'Apple',   800,   1   ),
+('Galaxy S23 Ultra', 'Samsung', 1100,  NULL),
+('Galaxy A54',       'Samsung', 400,   3   ),
+('Google Pixel 8',   'Google',  700,   NULL),
+('Any Phone Else',   'Any',    2700,   NULL);
 system clear;
-
-system echo "-- == (Before Update =======================================";
-SELECT * FROM users;
-SELECT * FROM users_greater_than_18;
-
--- If you update (VIEW) it also will be update (original table)
-UPDATE users_greater_than_18 SET age = 20 WHERE name = 'Amir';
-
-system echo "-- == (After Update) =======================================";
-SELECT * FROM users;
-SELECT * FROM users_greater_than_18;
+-- == ======================================================
+SELECT 
+    p.name AS Cheap_Phone,
+    p.price AS Cheap_Phone_Price,
+    iPhone_15_Pro.price AS iPhone_15_Pro_Price,
+    (iPhone_15_Pro.price - p.price) AS Price_Difference
+FROM products p, 
+     (SELECT price FROM products WHERE name = 'iPhone 15 Pro') AS iPhone_15_Pro
+WHERE p.price < iPhone_15_Pro.price;
