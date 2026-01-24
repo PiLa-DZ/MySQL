@@ -15,12 +15,9 @@ INSERT INTO products (name, brand, price, alternative_product_id) VALUES
 ('Google Pixel 8',   'Google',  700,   NULL),
 ('Any Phone Else',   'Any',    2700,   NULL);
 system clear;
--- == ======================================================
+-- Show all phones greater than aberage price
 SELECT 
-    p.name AS Cheap_Phone,
-    p.price AS Cheap_Phone_Price,
-    iPhone_15_Pro.price AS iPhone_15_Pro_Price,
-    (iPhone_15_Pro.price - p.price) AS Price_Difference
-FROM products p, 
-     (SELECT price FROM products WHERE name = 'iPhone 15 Pro') AS iPhone_15_Pro
-WHERE p.price < iPhone_15_Pro.price;
+    name AS Expensive_Phones, 
+    price AS Price_Greater_Than_Average
+FROM products
+WHERE price > (SELECT AVG(price) FROM products);
