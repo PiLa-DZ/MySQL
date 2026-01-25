@@ -30,3 +30,27 @@ INSERT INTO employees (name, salary, dept_id) VALUES
 system clear;
 select * from departments 
 where exists (select 1 from employees where dept_id = departments.id and salary > 5000);
+
+
+
++----+-----------------+
+| id | name            |
++----+-----------------+
+|  1 | Engineering     |
+|  2 | Design          |
+|  3 | Marketing       |
+|  4 | Human Resources |
++----+-----------------+
+4 rows in set (0.000 sec)
+
++----+--------+----------+---------+
+| id | name   | salary   | dept_id |
++----+--------+----------+---------+
+|  1 | Ahmed  |  1700.00 |       1 |
+|  2 | Sara   |  3800.00 |       1 |
+|  3 | Khaled |  5900.00 |       2 |
+|  4 | Laila  |  8300.00 |       3 |
+|  5 | Omar   | 13000.00 |    NULL |
++----+--------+----------+---------+
+
+
