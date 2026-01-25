@@ -25,7 +25,5 @@
     - [x] sql json --> JSON With MySQL (JSON_OBJECT, JSON_ARRAY, JSON_EXTRACT)
     - [x] Send Output From sql to file --> (TEE Path, NOTEE)
     - [x] Normalization: (1NF, 2NF, 3NF)
-
-    - JSON With MySQL (JSON_OBJECT, JSON_ARRAY, JSON_EXTRACT)
-
+    - [ ] SELECT DISTINCT Country FROM Customers;
 
