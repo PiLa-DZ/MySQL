@@ -57,3 +57,5 @@ SELECT * FROM users ORDER BY first_name LIMIT 3;
 -- Second Argoment (How Many)
 SELECT * FROM users LIMIT 1, 4;
 
+-- Don't Repeat Rows
+SELECT DISTINCT Country FROM Customers;
