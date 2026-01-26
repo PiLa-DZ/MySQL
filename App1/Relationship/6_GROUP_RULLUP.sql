@@ -7,13 +7,13 @@ INSERT INTO sales (brand, amount) VALUES
 
 SELECT brand, SUM(amount) AS total FROM sales
 GROUP BY brand WITH ROLLUP;
-+---------+---------+
-| brand   | total   |
-+---------+---------+
-| Apple   | 2000.00 | -- Price
-| Samsung | 1500.00 | -- Price
-| NULL    | 3500.00 | -- All Total
-+---------+---------+
+-- +---------+---------+
+-- | brand   | total   |
+-- +---------+---------+
+-- | Apple   | 2000.00 | -- Price
+-- | Samsung | 1500.00 | -- Price
+-- | NULL    | 3500.00 | -- All Total
+-- +---------+---------+
 
 -- == Example 2 ============================================
 -- == Get the tatal of the totals ==========================
@@ -31,14 +31,14 @@ from departments d
 join employees e
 on d.id = e.dept_id
 group by d.id with rollup; 
-+-------------+-------------------+
-| Departmen   | total_emps_salary |
-+-------------+-------------------+
-| Engineering |           5500.00 | -- Total salary
-| Design      |           5900.00 | -- Total salary
-| Marketing   |           8300.00 | -- Total salary
-| Marketing   |          19700.00 | -- All Total salary
-+-------------+-------------------+
+-- +-------------+-------------------+
+-- | Departmen   | total_emps_salary |
+-- +-------------+-------------------+
+-- | Engineering |           5500.00 | -- Total salary
+-- | Design      |           5900.00 | -- Total salary
+-- | Marketing   |           8300.00 | -- Total salary
+-- | Marketing   |          19700.00 | -- All Total salary
+-- +-------------+-------------------+
 
 -- == Example 3 ============================================
 -- == Solve the NULL problem ===============================
@@ -56,11 +56,11 @@ SELECT
 FROM departments d
 JOIN employees e ON d.id = e.dept_id
 GROUP BY d.name WITH ROLLUP;
-+-------------+--------------+
-| Department  | total_salary |
-+-------------+--------------+
-| Design      |      5900.00 |
-| Engineering |      5500.00 |
-| Marketing   |      8300.00 |
-| GRAND TOTAL |     19700.00 |
-+-------------+--------------+
+-- +-------------+--------------+
+-- | Department  | total_salary |
+-- +-------------+--------------+
+-- | Design      |      5900.00 |
+-- | Engineering |      5500.00 |
+-- | Marketing   |      8300.00 |
+-- | GRAND TOTAL |     19700.00 |
+-- +-------------+--------------+

@@ -1,7 +1,7 @@
 -- == Level 1 ==============================================
 DATABASE (CREATE, DROP, SHOW)
 Table (CREATE, DROP, ALTER, SHOW)
-SELECT DISTINCT | COALESCE() | GROUP_CONCAT() | AS() | COUNT() | AVG() | SUM() | MIN() | MAX() |
+SELECT DISTINCT | AS | COUNT() | AVG() | SUM() | MIN() | MAX() |
 FROM AS
 WHERE EXISTS | IS NULL | AND | OR | NOT | BETWEEN AND | IN() |
 INSERT INTO VALUES
@@ -16,7 +16,7 @@ Constraints ( ID_PKA, Not Null, Unique, Foreign Key, Check, Default, Index)
 -- == Level 3 ==============================================
 JOIN (INNER, LEFT, RIGHT, CROSS, Self) ON
 UNION ALL
-GROUP BY WITH RULLUP HAVING
+GROUP BY: HAVING | WITH RULLUP | COALESCE() | GROUP_CONCAT() |
 CASE
 
 -- == Level 4 ==============================================
