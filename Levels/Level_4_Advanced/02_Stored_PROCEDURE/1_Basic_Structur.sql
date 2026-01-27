@@ -1,0 +1,10 @@
+-- Create PROCEDURE
+DELIMITER //
+CREATE PROCEDURE Hello()
+BEGIN
+    SELECT "Hello World!" AS Message;
+END //
+DELIMITER ;
+
+-- Call PROCEDURE
+CALL Hello();
