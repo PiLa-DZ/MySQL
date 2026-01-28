@@ -1,0 +1,4 @@
+- [x] STORED PROCEDURES (90%)
+    - [ ] Error Handling (10%)
+    - [x] Loops
+- [ ] Difference (UNION), (Uull JOIN), (CROSS JOIN)
