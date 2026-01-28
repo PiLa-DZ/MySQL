@@ -1,7 +1,0 @@
--- == ======================================================
--- == Loops (WHILE and LOOP)
--- -- Sometimes you need to repeat an action. 
--- -- While we try to avoid loops in SQL 
---    (because set-based operations are faster), 
--- -- they are useful for tasks like generating 
---    test data or processing complex reports.
