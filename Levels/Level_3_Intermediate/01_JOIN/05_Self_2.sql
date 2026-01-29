@@ -1,3 +1,4 @@
+-- == Advanced Example =====================================
 DROP TABLE IF EXISTS employees, departments; system clear;
 CREATE TABLE employees (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -6,7 +7,6 @@ CREATE TABLE employees (
     manager_id INT,
     FOREIGN KEY (manager_id) REFERENCES employees(id)
 );
-
 INSERT INTO employees (name, job, manager_id) VALUES 
 ('Zaid',  'CEO',        NULL),
 ('Ahmed', 'IT Manager', 1),
@@ -14,7 +14,6 @@ INSERT INTO employees (name, job, manager_id) VALUES
 ('Ali',   'Developer',  2),
 ('Laila', 'Designer',   2),
 ('Mona',  'Recruiter',  3);
-
 SELECT 
     e.name AS Employee,
     e.job  AS Position,
@@ -23,4 +22,13 @@ FROM employees e
 LEFT JOIN employees m 
 ON e.manager_id = m.id
 ORDER BY m.name DESC;
-
+-- +----------+------------+------------+
+-- | Employee | Position   | Reports_To |
+-- +----------+------------+------------+
+-- | Sara     | HR Manager | Zaid       |
+-- | Ahmed    | IT Manager | Zaid       |
+-- | Mona     | Recruiter  | Sara       |
+-- | Ali      | Developer  | Ahmed      |
+-- | Laila    | Designer   | Ahmed      |
+-- | Zaid     | CEO        | NULL       |
+-- +----------+------------+------------+

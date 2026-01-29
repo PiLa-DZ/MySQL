@@ -1,6 +1,5 @@
--- Practice (Self JOIN)
+-- == Advanced Example =====================================
 DROP TABLE IF EXISTS products;
-
 CREATE TABLE products (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
@@ -9,15 +8,12 @@ CREATE TABLE products (
     alternative_product_id INT,
     FOREIGN KEY (alternative_product_id) REFERENCES products(id)
 );
-
 INSERT INTO products (name, brand, price, alternative_product_id) VALUES 
 ('iPhone 15 Pro',    'Apple',   1200,  NULL),
 ('iPhone 14',        'Apple',   800,   1   ),
 ('Galaxy S23 Ultra', 'Samsung', 1100,  NULL),
 ('Galaxy A54',       'Samsung', 400,   3   ),
 ('Google Pixel 8',   'Google',  700,   NULL);
-
-system clear;
 -- == ======================================================
 select 
     old_phone.name AS Old_Phone,
@@ -28,6 +24,13 @@ FROM products old_phone
 JOIN products new_phone
 ON old_phone.alternative_product_id = new_phone.id
 ORDER BY Price_Difference DESC;
+
+-- +------------+--------+------------------+------------------+
+-- | Old_Phone  | Price  | New_Phone        | Price_Difference |
+-- +------------+--------+------------------+------------------+
+-- | Galaxy A54 | 400.00 | Galaxy S23 Ultra |           700.00 |
+-- | iPhone 14  | 800.00 | iPhone 15 Pro    |           400.00 |
+-- +------------+--------+------------------+------------------+
 
 /* == Your Task ============================================
 - Write a Self Join query that displays a list of 
@@ -45,4 +48,3 @@ ORDER BY Price_Difference DESC;
 -- Only display products that have an alternative (do not display products without an alternative product ID).
 -- Sort the results so that the largest price difference appears first.
 */
-

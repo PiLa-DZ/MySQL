@@ -1,11 +1,27 @@
--- Practice (sales_data)
+-- == Advanced Example 2 ===================================
+-- Show only
+--    (Sales Employees)
+--    (Total Each employee Sales)
+--    (How many he sales)
+--    (Avrage of all employee sales)
+-- +------+-------------+------------------+----------------+
+-- | Name | Total_Sales | Number_Of_Orders | Average_Orders |
+-- +------+-------------+------------------+----------------+
+-- | Ali  |     3000.00 |                1 |    3000.000000 |
+-- | Sara |     2500.00 |                3 |     833.333333 |
+-- +------+-------------+------------------+----------------+
+-- == ======================================================
 DROP TABLE IF EXISTS sales, employees;
 CREATE TABLE employees (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
     department VARCHAR(50)
 );
-
+INSERT INTO employees (name, department) VALUES 
+('Ahmed', 'IT'), 
+('Sara', 'Sales'), 
+('Ali', 'Sales'), 
+('Mona', 'Marketing');
 CREATE TABLE sales (
     sale_id INT PRIMARY KEY AUTO_INCREMENT,
     emp_id INT,
@@ -13,13 +29,6 @@ CREATE TABLE sales (
     sale_date DATE,
     FOREIGN KEY (emp_id) REFERENCES employees(id)
 );
-
-INSERT INTO employees (name, department) VALUES 
-('Ahmed', 'IT'), 
-('Sara', 'Sales'), 
-('Ali', 'Sales'), 
-('Mona', 'Marketing');
-
 INSERT INTO sales (emp_id, amount, sale_date) VALUES 
 (2, 500.00, '2024-01-10'),
 (2, 1500.00, '2024-01-15'), -- Sara Sales 2 Times
@@ -34,11 +43,16 @@ SELECT
     COUNT(e.id) AS Number_Of_Orders,
     AVG(s.amount) AS Average_Orders
 FROM employees e
-JOIN sales s
-ON e.id = s.emp_id
-GROUP BY e.id, e.name
-HAVING Total_Sales > 1000
+JOIN sales s ON e.id = s.emp_id
+GROUP BY e.id, e.name HAVING Total_Sales > 1000
 ORDER BY Total_Sales DESC; 
+-- +------+-------------+------------------+----------------+
+-- | Name | Total_Sales | Number_Of_Orders | Average_Orders |
+-- +------+-------------+------------------+----------------+
+-- | Ali  |     3000.00 |                1 |    3000.000000 |
+-- | Sara |     2500.00 |                3 |     833.333333 |
+-- +------+-------------+------------------+----------------+
+
 /* == Your task ============================================
 We want to generate a "Star Employees" report. Write a query that displays the following:
 1 - Employee name.
