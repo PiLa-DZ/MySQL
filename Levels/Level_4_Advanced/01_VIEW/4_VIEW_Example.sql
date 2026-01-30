@@ -1,18 +1,13 @@
--- ======================================================
--- 1. Create Tables
--- ======================================================
--- Clean up environment
+-- == Advanced Example 1 ================================
 DROP VIEW IF EXISTS star_employees_report;
 DROP TABLE IF EXISTS sales, employees;
-
--- Create Employees Table
 CREATE TABLE employees (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
     department VARCHAR(50)
 );
-
--- Create Sales Table
+INSERT INTO employees (name, department) VALUES 
+('Ahmed', 'IT'), ('Sara', 'Sales'), ('Ali', 'Sales'), ('Mona', 'Marketing');
 CREATE TABLE sales (
     sale_id INT PRIMARY KEY AUTO_INCREMENT,
     emp_id INT,
@@ -20,11 +15,6 @@ CREATE TABLE sales (
     sale_date DATE,
     FOREIGN KEY (emp_id) REFERENCES employees(id)
 );
-
--- Populate Data
-INSERT INTO employees (name, department) VALUES 
-('Ahmed', 'IT'), ('Sara', 'Sales'), ('Ali', 'Sales'), ('Mona', 'Marketing');
-
 INSERT INTO sales (emp_id, amount, sale_date) VALUES 
 (2, 500.00, '2024-01-10'),
 (2, 1500.00, '2024-01-15'),
@@ -32,9 +22,7 @@ INSERT INTO sales (emp_id, amount, sale_date) VALUES
 (4, 200.00, '2024-01-22'),
 (2, 500.00, '2024-02-01');
 
--- ======================================================
--- 2. CREATE THE VIEW
--- ======================================================
+-- -- Create VIEW ------------------------------------------
 -- A View is like a saved "virtual table"
 CREATE VIEW star_employees_report AS
 SELECT 
@@ -47,11 +35,21 @@ JOIN sales s ON e.id = s.emp_id
 GROUP BY e.id, e.name
 HAVING total_sales > 1000;
 
-system clear;
--- == ======================================================
+-- -- ------------------------------------------------------
 -- Simply query the view like a normal table
 SELECT * FROM star_employees_report;
+-- +---------------+-------------+-------------+------------------+
+-- | employee_name | total_sales | sales_count | average_per_sale |
+-- +---------------+-------------+-------------+------------------+
+-- | Sara          |     2500.00 |           3 |       833.333333 |
+-- | Ali           |     3000.00 |           1 |      3000.000000 |
+-- +---------------+-------------+-------------+------------------+
+
+-- -- ------------------------------------------------------
 -- You can even filter the view!
 SELECT employee_name FROM star_employees_report WHERE sales_count > 2;
--- You can also update users NOTE: (another table)
-UPDATE users_greater_than_18 SET age = 20 WHERE name = 'h';
+-- +---------------+
+-- | employee_name |
+-- +---------------+
+-- | Sara          |
+-- +---------------+

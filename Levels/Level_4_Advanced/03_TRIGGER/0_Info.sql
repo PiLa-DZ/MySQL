@@ -1,0 +1,14 @@
+-- == TRIGGER Rules ========================================
+-- == 1. Event (INSERT, UPDATE, DELETE)
+-- == 2. Timing (BEFORE, AFTER)
+-- == 3. Target TABLE (NEW, OLD)
+
+-- NOTE: What you can't do
+-- No SELECT for display: 
+--    You cannot return a result set (like your "Hello" message).
+-- No START TRANSACTION: 
+--    Triggers are automatically part of the transaction that fired them.
+-- No COMMIT or ROLLBACK: 
+--    You cannot manually end a transaction inside a trigger.
+-- No Table Modification on itself: 
+--    A trigger on the users table cannot execute an UPDATE or DELETE on the users table (it would cause an infinite loop!).

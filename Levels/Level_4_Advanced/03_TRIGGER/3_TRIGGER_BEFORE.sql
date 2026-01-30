@@ -1,5 +1,6 @@
--- == Example 2 ============================================
+-- == Advanced Example 2 ===================================
 -- == "You can't make salary less than old salary" =========
+-- == ======================================================
 -- 1. Create Tables
 DROP TABLE IF EXISTS employees, departments, deleted_employees_log;
 DROP TRIGGER IF EXISTS prevent_salary_drop;
@@ -26,8 +27,10 @@ INSERT INTO employees (name, salary, dept_id) VALUES
 ('Khaled', 5900.00, 2),  
 ('Laila',  8300.00, 3),   
 ('Omar',  13000.00, NULL); 
+
+-- -- ------------------------------------------------------
 -- 2. Create Trigger
-DELIMITER //
+DELIMITER $$
 CREATE TRIGGER prevent_salary_drop
 BEFORE UPDATE ON employees
 FOR EACH ROW
@@ -35,10 +38,17 @@ BEGIN
     IF NEW.salary < OLD.salary THEN
         set NEW.salary = OLD.salary;
     END IF;
-END //
+END $$
 DELIMITER ;
--- 4. Test
+
+-- -- ------------------------------------------------------
+-- 3. Test
 system clear;
 update employees set salary = 1000 where name = "Laila";
--- Employee salary doesn't update because (1000 < 3800)
-select * from employees; 
+-- Employee salary doesn't update because (1000 < 8300)
+select * from employees where name = "Laila"; 
+-- +----+-------+---------+---------+
+-- | id | name  | salary  | dept_id |
+-- +----+-------+---------+---------+
+-- |  4 | Laila | 8300.00 |       3 |
+-- +----+-------+---------+---------+

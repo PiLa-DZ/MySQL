@@ -1,0 +1,4 @@
+-- == Scalar_Subqueries ====================================
+-- Scalar means "one value" (like a single point on a scale).
+-- Use it when you need a single specific piece of data from another table (or a calculation) to appear in your row.
+-- NOTE: Danger: If your subquery accidentally returns 2 rows or 2 columns, MySQL will throw an error: "Subquery returns more than 1 row".
