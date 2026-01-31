@@ -1,0 +1,6 @@
+-- You now have a complete toolkit:
+-- 1. Basics: ROW_NUMBER, RANK, DENSE_RANK.
+-- 2. Partitions: Grouping logic without collapsing rows.
+-- 3. Value Access: LAG and LEAD (with your COALESCE fix!).
+-- 4. Bucketing: NTILE.
+-- 5. Framing: ROWS BETWEEN.

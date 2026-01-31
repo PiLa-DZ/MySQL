@@ -1,0 +1,5 @@
+-- The "NOT" Scenario (The NULL Trap)
+-- This is the most dangerous part of SQL for beginners.
+-- NOT IN: If the subquery returns even one NULL, the entire query will return zero results. This is because val <> NULL is "Unknown" in SQL logic.
+-- NOT EXISTS: Works perfectly even if there are NULLs, because it's checking for the absence of a row, not the value of a column.
+-- Senior Rule: Use NOT EXISTS instead of NOT IN 99% of the time to avoid the NULL trap.

@@ -1,4 +1,5 @@
 -- == Derived Table ========================================
+-- NOTE: You have to learn CTE aftir this
 -- NOTE: In MySQL, every Derived Table must have its own Alias (a name). 
 --       If you don't give it a name (like AS my_temp_table), 
 --       MySQL will throw an error.
@@ -32,7 +33,7 @@ GROUP BY dept_name
 -- -- ------------------------------------------------------
 -- 2. The FROM Subquery (Derived Table)
 -- A Real-World Example: "The Average of Averages"
-SELECT AVG(dept_avg_salary) AS global_average
+SELECT AVG(dept_avg_salary) AS Global_Average
 FROM (
     -- This inner query creates a "virtual table"
     SELECT dept_name, AVG(salary) AS dept_avg_salary
@@ -40,7 +41,7 @@ FROM (
     GROUP BY dept_name
 ) AS department_summaries; -- <--- THIS ALIAS IS MANDATORY!
 -- +-----------------+
--- | global_average  |
+-- | Global_Average  |
 -- +-----------------+
 -- | 4000.0000000000 |
 -- +-----------------+
