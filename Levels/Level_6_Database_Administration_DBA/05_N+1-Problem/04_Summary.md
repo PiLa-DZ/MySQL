@@ -1,0 +1,8 @@
+- +----------------------------------------------------------------------------+
+- | Feature       | The N+1 Way (Lazy)            | The Optimized Way (Eager)  |
+- +----------------------------------------------------------------------------+
+- | Queries       | 1 (Categories) + N (Products) | 1 (Join) or 2 (IN clause)  |
+- | Speed         | Very slow as data grows       | Consistent and fast        |
+- | Database Load | High (Many connections)       | Low (Efficient processing) |
+- | Code Style    | Loop with queries inside      | JOIN or bulk fetching      |
+- +----------------------------------------------------------------------------+

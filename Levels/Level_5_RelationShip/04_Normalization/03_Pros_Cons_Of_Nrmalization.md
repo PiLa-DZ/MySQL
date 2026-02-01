@@ -1,0 +1,9 @@
+- Pros and Cons of Normalization
+- +------------------------------------------------------------------------+
+- | Feature         | Normalized (3NF)          | Denormalized             |
+- +------------------------------------------------------------------------+
+- | Data Integrity  | High (No duplicates)      | Low (Data can conflict)  |
+- | Storage Space   | Efficient (Small rows)    | Wasted (Repetitive text) |
+- | Query Speed     | Slower (Requires JOINs)   | Faster (No JOINs)        |
+- | Maintenance     | Easy                      | Hard                     |
+- +------------------------------------------------------------------------+

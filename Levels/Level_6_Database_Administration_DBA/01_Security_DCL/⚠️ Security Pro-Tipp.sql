@@ -1,8 +1,0 @@
--- ⚠️ Security Pro-Tip
--- As a backend developer, 
--- when you connect your Node.js, Python, or PHP app to the database, 
--- your .env file should use a user created with the "Principle of Least Privilege." 
--- If your app doesn't need to DROP tables, 
--- don't give that user the permission to do so. 
--- This way, if your app is hacked, 
--- the hacker can't delete your entire database.

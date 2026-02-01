@@ -1,6 +1,9 @@
+-- == (One-To-One RelationShip) ============================
 -- == ( Users & Profiles ) =================================
--- One-to-One relationships. 
+-- NOTE: You have to lear (One-to-One relationships)
+-- (One User) Have --> (One Profiles)
 -- This procedure creates a user and their profile at the same time.
+-- == ======================================================
 
 -- -- Step 1 : Create Tables and Data ----------------------
 DROP TABLE IF EXISTS profiles, users; 
@@ -11,10 +14,6 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL
 );
-INSERT INTO users (username, email) VALUES 
-('amine_dev', 'amine@example.com'),
-('yasmin_design', 'yasmin@example.com');
-
 CREATE TABLE profiles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     bio TEXT,
@@ -23,6 +22,10 @@ CREATE TABLE profiles (
     CONSTRAINT fk_user_profile FOREIGN KEY (user_id) 
     REFERENCES users(id) ON DELETE CASCADE
 );
+
+INSERT INTO users (username, email) VALUES 
+('amine_dev', 'amine@example.com'),
+('yasmin_design', 'yasmin@example.com');
 INSERT INTO profiles (bio, website_url, user_id) VALUES 
 ('Backend Developer & Linux lover', 'https://amine.dev', 1),
 ('UI/UX Designer specializing in Mobile Apps', 'https://yasmin.art', 2);

@@ -1,0 +1,6 @@
+- When to "Denormalize"?
+    - In modern Big Data (like Data Warehousing), 
+        - we sometimes deliberately break these rules 
+        - to make SELECT queries faster by avoiding 10 different joins. 
+    - This is called Denormalization, 
+        - but you should only do it after you've mastered Normalization first!

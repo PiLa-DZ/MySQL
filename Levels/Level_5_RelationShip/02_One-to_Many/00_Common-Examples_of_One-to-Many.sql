@@ -1,0 +1,8 @@
+-- == ======================================================
+-- Common Examples of One-to-Many:
+-- Author     -> Books     (One Author     has many Books    ).
+-- User       -> Posts     (One user       has many posts    ).
+-- Customer   -> Orders    (One customer   has many orders   ).
+-- Department -> Employees (One department has many employees).
+-- Category   -> Products  (One category   has many products ).
+-- == ======================================================
