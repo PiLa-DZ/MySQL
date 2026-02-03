@@ -1,3 +1,23 @@
+- 💡 Advice Node.js Developer
+    - your next project:
+        1. Migrations  & ORM       : You start here. Choose Prisma or Sequelize and never manually create tables in production.
+        2. ACID        & Locking   : Vital for your "Logic." If you are writing a checkout or payment system, these are your best friends.
+        3. Indexing    & Profiling : Vital for your "Growth." As soon as your app feels slow, use these to fix it.
+        3. Replication & Sharding  : These are "Future Problems." Don't worry about them until you have millions of users!
+
+- Pro-Tip: The "Monitoring" Mindset
+    - In administration, 
+    - you need to see what's happening right now.
+    - Use this command to see all active connections and what they are doing:
+    ```SQL
+    SHOW PROCESSLIST;
+    -- +----+-------+-----------+----------+---------+------+----------+------------------+----------+
+    -- | Id | User  | Host      | db       | Command | Time | State    | Info             | Progress |
+    -- +----+-------+-----------+----------+---------+------+----------+------------------+----------+
+    -- | 10 | admin | localhost | facebook | Query   |    0 | starting | SHOW PROCESSLIST |    0.000 |
+    -- +----+-------+-----------+----------+---------+------+----------+------------------+----------+
+    ```
+
 - Advice for a Node.js Backend Developer
     - Since you are using Node.js, here is my "Senior Developer" advice for your career:
 

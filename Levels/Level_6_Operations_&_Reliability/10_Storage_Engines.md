@@ -22,7 +22,8 @@
 1. How to check your Engines
     - Before we dive in, use this command to see which engines your server supports:
     ```SQL
-        SHOW ENGINES;
+    SHOW ENGINES;
+    /*
     +--------------------+---------+-------------------------------------------------------------------------------------------------+--------------+------+------------+
     | Engine             | Support | Comment                                                                                         | Transactions | XA   | Savepoints |
     +--------------------+---------+-------------------------------------------------------------------------------------------------+--------------+------+------------+
@@ -35,12 +36,14 @@
     | InnoDB             | DEFAULT | Supports transactions, row-level locking, foreign keys and encryption for tables                | YES          | YES  | YES        |
     | SEQUENCE           | YES     | Generated tables filled with sequential values                                                  | YES          | NO   | YES        |
     +--------------------+---------+-------------------------------------------------------------------------------------------------+--------------+------+------------+
+    */
     ```
     - You will see that InnoDB is usually the DEFAULT.
 
 2. The "Big Two" Comparison
     - For a Backend Developer, the choice usually boils down to InnoDB vs. MyISAM.
     ```SQL
+    /*
     +----------------+---------------------------------------------------------------------------------------|
     | Feature        | InnoDB (The Modern King)                     | MyISAM (The Old School)                |
     +----------------+---------------------------------------------------------------------------------------|
@@ -50,6 +53,7 @@
     | Crash Recovery | High (Self-repairs using a redo-log)         | "Low (Tables often get ""corrupted"")" |
     | Primary Use    | "Most web apps, E-commerce, Finance."        | Read-heavy blogs or legacy systems.    |
     +----------------+---------------------------------------------------------------------------------------|
+    */
     ```
 
 3. Other Engines you should know

@@ -1,5 +1,0 @@
--- When you use GRANT, you can be as broad or as specific as you want:
---     ALL PRIVILEGES | *.*           | Superuser / Admin (Dangerous!).
---     SELECT         | db_name.*     | Reporting tools / Analysts (Safe).
---     INSERT, UPDATE | db_name.table | Backend APIs / App Users.
---     CREATE, DROP   | db_name.*     | Migration scripts / Senior Devs.
