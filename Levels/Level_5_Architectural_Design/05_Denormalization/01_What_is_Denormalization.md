@@ -1,0 +1,12 @@
+- 🚀 What is Denormalization?
+    - Denormalization is the intentional process of 
+        - adding redundant data to a database 
+        - to speed up complex queries.
+    - In a normalized database, 
+        - you might have to JOIN 5 tables to get a simple invoice. 
+        - If you have 10 million users, 
+        - that JOIN will be slow. 
+        - Denormalization says: 
+            - "Let's just save the Customer Name directly 
+            - inside the Orders table 
+            - so we don't have to JOIN anything."
