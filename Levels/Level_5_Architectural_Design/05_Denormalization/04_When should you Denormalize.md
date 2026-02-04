@@ -1,0 +1,5 @@
+- 💡 When should you Denormalize?
+    - As a developer, you should follow the "Normalize until it hurts, Denormalize until it works" rule:
+    - Always start with 3rd Normal Form (3NF). Keep it clean.
+    - Monitor Performance. Use Profiling ⏱️ to find slow queries.
+    - Denormalize only the bottlenecks. If a JOIN is taking 2 seconds, that's when you add redundant data.
