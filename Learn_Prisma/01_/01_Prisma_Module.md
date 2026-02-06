@@ -1,6 +1,10 @@
 Prisma_Module
 Summary: CLI Tool 
 
+```BASH
+npm install prisma
+```
+
 More Details:
 npm install prisma (The Architect)
 Think of this as your Construction Toolset.
