@@ -1,8 +1,9 @@
 DotEnv
+Summary: reads the .env file and loads those variables into process.env
+
 ```BASH
 npm install dotenv
 ```
-Summary: reads the .env file and loads those variables into process.env
 
 More Details:
 npm install dotenv (The Security Guard)

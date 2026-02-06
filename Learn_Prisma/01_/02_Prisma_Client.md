@@ -1,6 +1,10 @@
 Prisma_Client
 Summary: The Translator
 
+```BASH
+npm install @prisma/client@6
+```
+
 More Details:
 npm install @prisma/client@6 (the translator)
 This is the Engine that your actual JavaScript code uses.

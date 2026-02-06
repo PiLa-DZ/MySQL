@@ -1,4 +1,6 @@
 ```Bash
+# For Your WorkFlow
+npm i --save-dev @types/node
 npx prisma format
 
 # 🚀 One Last Cool Thing
