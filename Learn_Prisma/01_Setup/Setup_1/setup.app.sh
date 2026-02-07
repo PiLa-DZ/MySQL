@@ -22,8 +22,8 @@ npm install nodemon --save-dev --verbose
 
 git init
 
-npm install prisma@6 --save-dev
-npm install @prisma/client@6 --save-dev
+npm install prisma@6 --save-dev --verbose
+npm install @prisma/client@6 --save-dev --verbose
 npx prisma init
 
 npx prisma migrate dev --name init
