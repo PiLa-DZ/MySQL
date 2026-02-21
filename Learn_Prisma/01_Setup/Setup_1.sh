@@ -17,8 +17,8 @@ npm install nodemon --save-dev --verbose
 
 git init
 
-npm install prisma@6 --save-dev
-npm install @prisma/client@6 --save-dev
+npm install prisma@6 --save-dev # The prisma CLI (the tool that migrates your DB) should be a Dev Dependency (-D).
+npm install @prisma/client@6    # @prisma/client (the code you use to query MariaDB) must be a Production Dependency.
 npx prisma init
 
 echo '
